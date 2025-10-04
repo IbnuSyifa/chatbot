@@ -1,5 +1,8 @@
 streamlit
 matplotlib
+PyPDF2
+docx
+io
 google-genai>=1.0.0
 langchain-google-genai>=2.1.0
 langgraph>=0.0.30
