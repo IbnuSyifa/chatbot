@@ -7,8 +7,8 @@ from langchain_core.messages import HumanMessage, AIMessage  # For message forma
 # --- 1. Page Configuration and Title ---
 
 # Set the title and a caption for the web page
-st.title("💬 Damar Chatbot")
-st.caption("A simple and friendly chat using LangGraph with Google's Gemini model")
+st.title("💬 NuAi 💬")
+st.caption("A simple and friendly chatbot using LangGraph with Google's Gemini model")
 
 # --- 2. Sidebar for Settings ---
 
@@ -92,7 +92,7 @@ for msg in st.session_state.messages:
 # Create a chat input box at the bottom of the page.
 # The user's typed message will be stored in the 'prompt' variable.
 prompt = st.chat_input("Type your message here...")
-
+st.file_uploader('File uploader')
 # Check if the user has entered a message.
 if prompt:
     # 1. Add the user's message to our message history list.
