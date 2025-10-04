@@ -1,11 +1,11 @@
 # Import the necessary libraries
 import streamlit as st
+import PyPDF2
+import io
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.prebuilt import create_react_agent
 from langchain_core.messages import HumanMessage, AIMessage
-import PyPDF2 
-import docx 
-import io  
+from pypdf import PdfReader, PdfWriter
 
 # --- 1. Page Configuration and Title ---
 st.set_page_config(page_title="NuAi Chatbot", page_icon="💬", layout="wide")
