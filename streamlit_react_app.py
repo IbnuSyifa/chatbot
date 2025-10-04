@@ -3,14 +3,14 @@ import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.prebuilt import create_react_agent
 from langchain_core.messages import HumanMessage, AIMessage
-import PyPDF2  # <-- BARU: Untuk membaca file PDF
-import docx    # <-- BARU: Untuk membaca file DOCX
-import io      # <-- BARU: Untuk menangani file sebagai byte stream
+import PyPDF2 
+import docx 
+import io  
 
 # --- 1. Page Configuration and Title ---
-st.set_page_config(page_title="NuAi Chatbot", page_icon="💬", layout="wide") # <-- DIMODIFIKASI: Menambahkan layout wide
+st.set_page_config(page_title="NuAi Chatbot", page_icon="💬", layout="wide")
 st.title("💬 NuAi 💬")
-st.caption("Chatbot cerdas dengan kemampuan analisis dokumen menggunakan LangGraph dan Gemini.") # <-- DIMODIFIKASI
+st.caption("Chatbot cerdas dengan kemampuan analisis dokumen menggunakan LangGraph dan Gemini.")
 
 # --- 2. Sidebar for Settings ---
 with st.sidebar:
@@ -50,14 +50,14 @@ if not google_api_key:
 if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", None) != google_api_key):
     try:
         llm = ChatGoogleGenerativeAI(
-            model="gemini-1.5-flash", # Model lebih baru dan cocok untuk konteks panjang
+            model="gemini-2.5-flash",
             google_api_key=google_api_key,
             temperature=0.7
         )
         st.session_state.agent = create_react_agent(
             model=llm,
             tools=[],
-            # <-- DIMODIFIKASI: Prompt diubah menjadi lebih dinamis
+           
             prompt="You are a helpful, friendly assistant. Respond concisely and clearly. If context from a document is provided, you MUST base your answer on that context."
         )
         st.session_state._last_key = google_api_key
@@ -70,13 +70,13 @@ if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", 
 # --- 4. Chat History and Document Context Management ---
 if "messages" not in st.session_state:
     st.session_state.messages = []
-if "document_context" not in st.session_state: # <-- BARU
-    st.session_state.document_context = None    # <-- BARU
+if "document_context" not in st.session_state: 
+    st.session_state.document_context = None 
 
 if reset_button:
     st.session_state.pop("agent", None)
     st.session_state.pop("messages", None)
-    st.session_state.pop("document_context", None) # <-- BARU
+    st.session_state.pop("document_context", None) 
     st.rerun()
 
 # --- 5. Display Past Messages ---
@@ -84,8 +84,7 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# --- BARU: Bagian Unggah dan Proses Dokumen ---
-# Letakkan ini tepat sebelum input chat untuk alur yang logis
+
 uploaded_file = st.file_uploader(
     "Unggah dokumen untuk dianalisis (PDF, DOCX, TXT)",
     type=["pdf", "docx", "txt"]
