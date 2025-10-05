@@ -8,8 +8,8 @@ from langchain_core.messages import HumanMessage, AIMessage
 from pypdf import PdfReader, PdfWriter
 
 # --- 1. Page Configuration and Title ---
-st.set_page_config(page_title="NuAi Chatbot", page_icon="💬", layout="wide")
-st.title("💬 NuAi 💬")
+st.set_page_config(page_title="NuAi Chatbot", page_icon="🧠", layout="wide")
+st.title("🤖 NuAi")
 st.caption("Chatbot cerdas dengan kemampuan analisis dokumen menggunakan LangGraph dan Gemini.")
 
 # --- 2. Sidebar for Settings ---
