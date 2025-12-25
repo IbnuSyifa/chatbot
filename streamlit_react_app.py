@@ -54,7 +54,6 @@ if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", 
             model="gemini-3-flash-preview",
             google_api_key=google_api_key,
             temperature=0.7,
-            config=types.GenerateContentConfig(thinking_config=types.ThinkingConfig(include_thoughts=True),
     )
         )
         st.session_state.agent = create_react_agent(
