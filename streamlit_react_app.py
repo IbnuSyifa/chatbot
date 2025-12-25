@@ -50,7 +50,7 @@ if not google_api_key:
 if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", None) != google_api_key):
     try:
         llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
+            model="gemini-3-flash",
             google_api_key=google_api_key,
             temperature=0.7
         )
