@@ -51,10 +51,11 @@ if not google_api_key:
 if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", None) != google_api_key):
     try:
         llm = ChatGoogleGenerativeAI(
-            model="gemini-3-flash",
+            model="gemini-3-flash-preview",
             google_api_key=google_api_key,
             temperature=0.7
-            config={'thinking_level': 'medium'}
+            config=types.GenerateContentConfig(thinking_config=types.ThinkingConfig(include_thoughts=True),
+    )
         )
         st.session_state.agent = create_react_agent(
             model=llm,
