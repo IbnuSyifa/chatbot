@@ -3,7 +3,6 @@ import streamlit as st
 import PyPDF2
 import io
 from langchain_google_genai import ChatGoogleGenerativeAI
-# from langchain.agents import create_react_agent
 from langgraph.prebuilt import create_react_agent
 from langchain_core.messages import HumanMessage, AIMessage
 from pypdf import PdfReader, PdfWriter
@@ -52,7 +51,7 @@ if not google_api_key:
 if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", None) != google_api_key):
     try:
         llm = ChatGoogleGenerativeAI(
-            model="gemini-3-flash-preview",
+            model="gemini-2.5-flash",
             google_api_key=google_api_key,
             temperature=0.7,
     
