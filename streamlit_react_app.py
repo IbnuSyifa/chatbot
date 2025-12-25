@@ -53,7 +53,7 @@ if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", 
         llm = ChatGoogleGenerativeAI(
             model="gemini-3-flash-preview",
             google_api_key=google_api_key,
-            temperature=0.7
+            temperature=0.7,
             config=types.GenerateContentConfig(thinking_config=types.ThinkingConfig(include_thoughts=True),
     )
         )
