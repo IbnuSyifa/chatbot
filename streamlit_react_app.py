@@ -6,6 +6,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.prebuilt import create_react_agent
 from langchain_core.messages import HumanMessage, AIMessage
 from pypdf import PdfReader, PdfWriter
+from google import genai
 
 # --- 1. Page Configuration and Title ---
 st.set_page_config(page_title="NuAi Chatbot", page_icon="🧠", layout="wide")
