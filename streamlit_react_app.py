@@ -8,6 +8,18 @@ from langchain_core.messages import HumanMessage, AIMessage
 from pypdf import PdfReader, PdfWriter
 from google import genai
 
+
+st.markdown("""
+<style>
+.st-emotion-cache-pkm19r.e1mwqyj915
+{
+    visibility: hidden;
+}
+
+
+</style>
+""", unsafe_allow_html=True)
+
 # Configuration
 st.set_page_config(page_title="NuAi Chatbot", page_icon="🧠", layout="wide")
 st.title("🤖 NuAi")
