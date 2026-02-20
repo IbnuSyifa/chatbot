@@ -19,6 +19,11 @@ st.markdown("""
 {
     visibility: hidden;
 }
+._text_gzau3_22
+{
+    visibility: hidden;
+}
+
 .st-emotion-cache-q16mip.eyud7441
 {
     visibility: hidden;
