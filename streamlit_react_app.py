@@ -11,10 +11,7 @@ from google import genai
 
 st.markdown("""
 <style>
-.st-emotion-cache-pkm19r.e1mwqyj915
-{
-    visibility: hidden;
-}
+
 ._container_gzau3_1 _viewerBadge_nim44_23
 {
     visibility: hidden;
@@ -24,7 +21,10 @@ st.markdown("""
     visibility: hidden;
 }
 
-
+.st-emotion-cache-q16mip.eyud7441
+{
+    visibility: hidden;
+}
 .st-emotion-cache-1wbqy5l.eyud7440
 {
     visibility: hidden;
