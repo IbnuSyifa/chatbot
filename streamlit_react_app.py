@@ -71,15 +71,15 @@ def process_document(uploaded_file):
         return None
 
 # API Key and Agent Initialization
-#if not google_api_key:
-    #st.info("Please add your Google AI API key in the sidebar to start chatting.", icon="🗝️")
-    #st.stop()
+if not google_api_key:
+    st.info("Please add your Google AI API key in the sidebar to start chatting.", icon="🗝️")
+    st.stop()
 
 if ("agent" not in st.session_state) or (getattr(st.session_state, "_last_key", None) != google_api_key):
     try:
         llm = ChatGoogleGenerativeAI(
             model="gemini-2.5-flash",
-            google_api_key=AIzaSyBk4z1qetfxU2ZMjkSkBABISTlm8i3cLvk
+            google_api_key=google_api_key,
             temperature=0.7,
     
         )
