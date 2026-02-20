@@ -19,7 +19,7 @@ st.markdown("""
 {
     visibility: hidden;
 }
-._text_gzau3_22
+._text_gzau3_10
 {
     visibility: hidden;
 }
