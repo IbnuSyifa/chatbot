@@ -15,8 +15,18 @@ st.markdown("""
 {
     visibility: hidden;
 }
-
-
+._container_gzau3_1 _viewerBadge_nim44_23
+{
+    visibility: hidden;
+}
+.st-emotion-cache-q16mip.eyud7441
+{
+    visibility: hidden;
+}
+.st-emotion-cache-1wbqy5l.eyud7440
+{
+    visibility: hidden;
+}
 </style>
 """, unsafe_allow_html=True)
 
